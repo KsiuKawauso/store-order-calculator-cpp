@@ -290,7 +290,7 @@ bool IssAtask(
     }
 
     RodAtask(
-        fail,
+        failas,
         kat,
         pavad,
         kain,
