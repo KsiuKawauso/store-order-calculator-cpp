@@ -394,7 +394,7 @@ int main() {
                     kat = "Dviraciai";
                     break;
                 case 2:
-                    kat = "Dalys";
+                    pasirinktaKat = "Dalys";
                     break;
                 case 3:
                     pasirinktaKat = "Aksesuarai";
