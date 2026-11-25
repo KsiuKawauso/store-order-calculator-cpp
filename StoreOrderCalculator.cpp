@@ -276,14 +276,13 @@ void RodAtask(
     };
 
     for (int i = 0; i < 3; i++) {
-        double KatSum =
-            skaicKatSum(
-                KatPavad[i],
-                kat,
-                kain,
-                kiek,
-                PrekKiek
-            );
+        double KatSum = skaicKatSum(
+            KatPavadinimai[i],
+            kat,
+            kain,
+            kiek,
+            PrekKiek
+        );
 
         isvedimas << KatPavadinimai[i]
                   << ": " << KatSum << " EUR\n";
