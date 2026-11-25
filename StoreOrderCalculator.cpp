@@ -192,8 +192,8 @@ void RodUzsakSum(
     double BendNuol = 0;
 
     for (int i = 0; i < PrekKiek; i++) {
-        double suma =
-            skaicEilSum(kain[i], kiek[i]);
+        double suma = skaicEilSum(kain[i], kiek[i]);
+        double nuol = skaicNuol(suma, kiek[i]);
 
         SumPreNuol += suma;
         BendNuol += nuol;
