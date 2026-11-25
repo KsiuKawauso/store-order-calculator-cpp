@@ -397,7 +397,7 @@ int main() {
                     kat = "Dalys";
                     break;
                 case 3:
-                    kat = "Aksesuarai";
+                    pasirinktaKat = "Aksesuarai";
                     break;
                 default:
                     cout << "Klaida! Pasirinkite 1, 2 arba 3.\n";
