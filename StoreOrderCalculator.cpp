@@ -75,7 +75,7 @@ bool SkatOrdr(
         if (!(kainaGij >> kain[i]) ||
             (kainaGij >> papildomas) ||
             !(kiekGij >> kiek[i]) ||
-            (kiekGij >> papildomas)) {
+            (kiekGij >> ws && !kiekGij.eof())) {
             cout << "Klaida! Netinkama kaina arba kiekis.\n";
             return false;
             }
