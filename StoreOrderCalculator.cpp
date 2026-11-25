@@ -159,14 +159,9 @@ void RodPrek(
 
             rasta = true;
 
-            double suma =
-                skaicEilSum(kain[i], kiek[i]);
-
-            double nuol =
-                skaicNuol(sum, kiek[i]);
-
-            double mok =
-                skaicMokSum(sum, nuol);
+            double suma = skaicEilSum(kain[i], kiek[i]);
+            double nuol = skaicNuol(suma, kiek[i]);
+            double mok = skaicMokSum(suma, nuol);
 
             cout << left << setw(15) << kat[i]
                  << setw(30) << pavad[i]
