@@ -429,7 +429,7 @@ int main() {
             };
 
             for (int i = 0; i < 3; i++) {
-                double sum = skaicKatSum(
+                double suma = skaicKatSum(
                     katPavad[i],
                     kat,
                     kain,
