@@ -406,7 +406,7 @@ int main() {
 
             RodPrek(
                 kat, pavad, kain,
-                kiek, PrekKiek, kat
+                kiek, PrekKiek, pasirinktaKat
             );
 
             double suma = skaicKatSum(
