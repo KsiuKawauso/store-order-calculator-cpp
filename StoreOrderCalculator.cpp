@@ -255,7 +255,7 @@ void RodAtask(
                   << setw(30) << pavad[i]
                   << right << setw(10) << kain[i]
                   << setw(8) << kiek[i]
-                  << setw(12) << sum
+                  << setw(12) << suma
                   << setw(12) << nuol
                   << setw(12) << mok << endl;
     }
