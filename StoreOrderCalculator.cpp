@@ -410,8 +410,11 @@ int main() {
             );
 
             double suma = skaicKatSum(
-                kat, kat, kain,
-                kiek, PrekKiek
+                pasirinktaKat,
+                kat,
+                kain,
+                kiek,
+                PrekKiek
             );
 
             cout << "Kategorijos moketina suma: "
