@@ -321,7 +321,7 @@ int main() {
 
     int PrekKiek = 0;
 
-    if (!nuskaitytiDuomenis(
+    if (!SkatOrdr(
         "uzsakymas.txt",
         kat,
         pavad,
