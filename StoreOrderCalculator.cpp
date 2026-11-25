@@ -120,10 +120,7 @@ double skaicKatSum(
             double eilSuma =
                 skaicEilSum(kainos[i], kiek[i]);
 
-            double nuol =
-                skaicNuol(eilSum, kiek[i]);
-
-            KatSum += skaicMokSum(eilSum, nuol);
+            KatSum += skaicMokSum(eilSuma, nuol);
         }
     }
 
