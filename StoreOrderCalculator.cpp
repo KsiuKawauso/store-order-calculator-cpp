@@ -127,6 +127,6 @@ double skaicKatSum(
         }
     }
 
-    return suma;
+    return KatSum;
 }
 
