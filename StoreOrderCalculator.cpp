@@ -15,7 +15,7 @@ bool SkatOrdr(
     int kiek[],
     int &PrekKiek
 ) {
-    ifstream failas(FilPavad);
+    ifstream failas(FPavad);
 
     if (!failas.is_open()) {
         cout << "Klaida! Nepavyko atidaryti duomenu failo.\n";
