@@ -371,10 +371,7 @@ int main() {
         }
 
         if (pasirinkimas == 1) {
-            RodPrek(
-                kat, pavad, kain,
-                kiek, PrekKiek
-            );
+            RodPrek(kat, pavad, kain, kiek, PrekKiek);
         }
 
         else if (pasirinkimas == 2) {
