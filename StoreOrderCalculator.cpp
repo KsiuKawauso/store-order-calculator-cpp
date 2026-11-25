@@ -294,7 +294,8 @@ bool IssAtask(
         kat,
         pavad,
         kain,
-        PrekKiek,
+        kiek,
+        PrekKiek
     );
 
     if (!failas) {
