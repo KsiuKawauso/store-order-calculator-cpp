@@ -107,7 +107,7 @@ double skaicMokSum(double sum, double nuol) {
 }
 
 double skaicKatSum(
-    string kat,
+    string pasirinktaKat,
     string kat[],
     double kain[],
     int kiek[],
