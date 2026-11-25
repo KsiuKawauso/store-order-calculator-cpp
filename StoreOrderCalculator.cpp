@@ -439,7 +439,7 @@ int main() {
 
                 cout << fixed << setprecision(2);
                 cout << katPavad[i]
-                     << ": " << sum << " EUR\n";
+                     << ": " << suma << " EUR\n";
             }
         }
 
