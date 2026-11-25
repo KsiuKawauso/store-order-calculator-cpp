@@ -123,7 +123,7 @@ double skaicKatSum(
             double nuol =
                 skaicNuol(eilSum, kiek[i]);
 
-            suma += skaicMokSum(eilSum, nuol);
+            KatSum += skaicMokSum(eilSum, nuol);
         }
     }
 
