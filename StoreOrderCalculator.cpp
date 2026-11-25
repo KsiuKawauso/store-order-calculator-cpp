@@ -55,7 +55,8 @@ bool SkatOrdr(
         if (!getline(ss, kat[i], ';') ||
             !getline(ss, pav[i], ';') ||
             !getline(ss, kainaTxt, ';') ||
-            !getline(ss, kiekTxt)) {
+            !getline(ss, kiekTxt) ||
+            getline(ss, papildomasLaukas, ';')) {
             cout << "Klaida! Netinkamas duomenu eilutes formatas.\n";
             return false;
             }
