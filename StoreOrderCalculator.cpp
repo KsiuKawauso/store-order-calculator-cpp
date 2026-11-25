@@ -391,7 +391,7 @@ int main() {
 
             switch (KatPas) {
                 case 1:
-                    kat = "Dviraciai";
+                    pasirinktaKat = "Dviraciai";
                     break;
                 case 2:
                     pasirinktaKat = "Dalys";
