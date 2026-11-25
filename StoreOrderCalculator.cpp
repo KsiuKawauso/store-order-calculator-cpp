@@ -350,5 +350,125 @@ int main() {
     }
 
     cout << "Duomenys sekmingai nuskaityti.\n";
+
+    int pasirinkimas;
+
+    do {
+        cout << "\n=*+=*+=*+= MENIU =*+=*+=*+=\n";
+        cout << "1. Perziureti visas uzsakymo prekes\n";
+        cout << "2. Perziureti pasirinktos kategorijos prekes\n";
+        cout << "3. Perziureti viso uzsakymo sumas\n";
+        cout << "4. Perziureti sumas pagal kategorijas\n";
+        cout << "5. Parodyti visa uzsakymo ataskaita\n";
+        cout << "6. Issaugoti ataskaita i faila\n";
+        cout << "7. Iseiti\n";
+        cout << "Pasirinkite veiksma: ";
+        cin >> pasirinkimas;
+
+        if (pasirinkimas < 1 || pasirinkimas > 7) {
+            cout << "Klaida! Pasirinkite skaiciu nuo 1 iki 7.\n";
+            continue;
+        }
+
+        if (pasirinkimas == 1) {
+            RodPrek(
+                kat, pavad, kain,
+                kiek, PrekKiek
+            );
+        }
+
+        else if (pasirinkimas == 2) {
+            int KatPas;
+
+            cout << "\nPasirinkite kategorija:\n";
+            cout << "1. Dviraciai\n";
+            cout << "2. Dalys\n";
+            cout << "3. Aksesuarai\n";
+            cout << "Jusu pasirinkimas: ";
+            cin >> KatPas;
+
+            string kat;
+
+            switch (KatPas) {
+                case 1:
+                    kat = "Dviraciai";
+                    break;
+                case 2:
+                    kat = "Dalys";
+                    break;
+                case 3:
+                    kat = "Aksesuarai";
+                    break;
+                default:
+                    cout << "Klaida! Pasirinkite 1, 2 arba 3.\n";
+                    continue;
+            }
+
+            RodPrek(
+                kat, pavad, kain,
+                kiek, PrekKiek, kat
+            );
+
+            double suma = skaicKatSum(
+                kat, kat, kain,
+                kiek, PrekKiek
+            );
+
+            cout << "Kategorijos moketina suma: "
+                 << fixed << setprecision(2)
+                 << suma << " EUR\n";
+        }
+
+        else if (pasirinkimas == 3) {
+            RodUzsakSum(kain, kiek, PrekKiek);
+        }
+
+        else if (pasirinkimas == 4) {
+            string katPavad[] = {
+                "Dviraciai", "Dalys", "Aksesuarai"
+            };
+
+            for (int i = 0; i < 3; i++) {
+                double sum = skaicKatSum(
+                    katPavad[i],
+                    kat,
+                    kain,
+                    kiek,
+                    PrekKiek
+                );
+
+                cout << fixed << setprecision(2);
+                cout << katPavad[i]
+                     << ": " << sum << " EUR\n";
+            }
+        }
+
+        else if (pasirinkimas == 5) {
+            RodAtask(
+                cout, kat, pavad,
+                kain, kiek, PrekKiek
+            );
+        }
+
+        else if (pasirinkimas == 6) {
+            if (IssAtask(
+                "ataskaita.txt",
+                kat,
+                pavad,
+                kain,
+                kiek,
+                PrekKiek
+            )) {
+                cout << "Ataskaita sekmingai issaugota faile ataskaita.txt.\n";
+            }
+        }
+
+        else if (pasirinkimas == 7) {
+            cout << "Programa baigta.\n";
+        }
+
+    } while (pasirinkimas != 7);
+
+    return 0;
 }
 
