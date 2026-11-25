@@ -337,7 +337,7 @@ int main() {
     int pasirinkimas;
 
     do {
-        cout << "\n=*+=*+=*+= MENIU =*+=*+=*+=\n";
+        cout << "\n======= MENIU =======\n";
         cout << "1. Perziureti visas uzsakymo prekes\n";
         cout << "2. Perziureti pasirinktos kategorijos prekes\n";
         cout << "3. Perziureti viso uzsakymo sumas\n";
