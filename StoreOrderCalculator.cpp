@@ -243,10 +243,7 @@ void RodAtask(
         double nuol = skaicNuol(suma, kiek[i]);
         double mok = skaicMokSum(suma, nuol);
 
-        double mok =
-            skaicMokSum(sum, nuol);
-
-        SumPreNuol += sum;
+        SumPreNuol += suma;
         BendNuol += nuol;
 
         isvedimas << left << setw(15) << kat[i]
