@@ -285,8 +285,8 @@ void RodAtask(
                 PrekKiek
             );
 
-        isvedimas << KatPavad[i]
-                  << ": " << katSum << " EUR\n";
+        isvedimas << KatPavadinimai[i]
+                  << ": " << KatSum << " EUR\n";
     }
 
     isvedimas << "========================================\n";
