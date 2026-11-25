@@ -130,3 +130,225 @@ double skaicKatSum(
     return KatSum;
 }
 
+void RodPrek(
+    string kat[],
+    string pavad[],
+    double kain[],
+    int kiek[],
+    int PrekKiek,
+    string PasKat = ""
+) {
+    bool rasta = false;
+
+    cout << fixed << setprecision(2);
+
+    cout << "\n";
+    cout << left << setw(15) << "Kategorija"
+         << setw(30) << "Preke"
+         << right << setw(10) << "Kaina"
+         << setw(8) << "Kiekis"
+         << setw(12) << "Suma"
+         << setw(12) << "Nuolaida"
+         << setw(12) << "Moketina" << endl;
+
+    cout << string(99, '-') << endl;
+
+    for (int i = 0; i < PrekKiek; i++) {
+        if (PasKat == "" ||
+            kat[i] == PasKat) {
+
+            rasta = true;
+
+            double suma =
+                skaicEilSum(kain[i], kiek[i]);
+
+            double nuol =
+                skaicNuol(sum, kiek[i]);
+
+            double mok =
+                skaicMokSum(sum, nuol);
+
+            cout << left << setw(15) << kat[i]
+                 << setw(30) << pavad[i]
+                 << right << setw(10) << kain[i]
+                 << setw(8) << kiek[i]
+                 << setw(12) << sum
+                 << setw(12) << nuol
+                 << setw(12) << mok << endl;
+        }
+    }
+
+    if (!rasta) {
+        cout << "Pasirinktoje kategorijoje prekiu nera.\n";
+    }
+}
+
+void RodUzsakSum(
+    double kain[],
+    int kiek[],
+    int PrekKiek
+) {
+    double SumPreNuol = 0;
+    double BendNuol = 0;
+
+    for (int i = 0; i < PrekKiek; i++) {
+        double suma =
+            skaicEilSum(kain[i], kiek[i]);
+
+        double nuol =
+            skaicNuol(sum, kiek[i]);
+
+        SumPreNuol += sum;
+        BendNuol += nuol;
+    }
+
+    cout << fixed << setprecision(2);
+    cout << "\nSuma pries nuolaidas: "
+         << SumPreNuol << " EUR\n";
+
+    cout << "Bendra nuolaidu suma: "
+         << BendNuol << " EUR\n";
+
+    cout << "Galutine uzsakymo suma: "
+         << SumPreNuol - BendNuol << " EUR\n";
+}
+
+void RodAtask(
+    ostream &isvedimas,
+    string kat[],
+    string pavad[],
+    double kain[],
+    int kiek[],
+    int PrekKiek
+) {
+    double SumPreNuol = 0;
+    double BendNuol = 0;
+
+    isvedimas << fixed << setprecision(2);
+
+    isvedimas << "\n=*=*=*=*=*= UZSAKYMO ATASKAITA =*=*=*=*=*=\n";
+
+    isvedimas << left << setw(15) << "Kategorija"
+              << setw(30) << "Preke"
+              << right << setw(10) << "Kaina"
+              << setw(8) << "Kiekis"
+              << setw(12) << "Suma"
+              << setw(12) << "Nuolaida"
+              << setw(12) << "Moketina" << endl;
+
+    isvedimas << string(99, '-') << endl;
+
+    for (int i = 0; i < PrekKiek; i++) {
+        double suma =
+            skaicEilSum(kain[i], kiek[i]);
+
+        double nuol =
+            skaicNuol(sum, kiek[i]);
+
+        double mok =
+            skaicMokSum(sum, nuol);
+
+        SumPreNuol += sum;
+        BendNuol += nuol;
+
+        isvedimas << left << setw(15) << kat[i]
+                  << setw(30) << pavad[i]
+                  << right << setw(10) << kain[i]
+                  << setw(8) << kiek[i]
+                  << setw(12) << sum
+                  << setw(12) << nuol
+                  << setw(12) << mok << endl;
+    }
+
+    isvedimas << "\nSuma pries nuolaidas: "
+              << SumPreNuol << " EUR\n";
+
+    isvedimas << "Bendra nuolaidu suma: "
+              << BendNuol << " EUR\n";
+
+    isvedimas << "Galutine uzsakymo suma: "
+              << SumPreNuol - BendNuol << " EUR\n";
+
+    isvedimas << "\n========== KATEGORIJU SUVESTINE ==========\n";
+
+    string KatPavadinimai[] = {
+        "Dviraciai", "Dalys", "Aksesuarai"
+    };
+
+    for (int i = 0; i < 3; i++) {
+        double KatSum =
+            skaicKatSum(
+                KatPavad[i],
+                kat,
+                kain,
+                kiek,
+                PrekKiek
+            );
+
+        isvedimas << KatPavad[i]
+                  << ": " << katSum << " EUR\n";
+    }
+
+    isvedimas << "========================================\n";
+}
+
+bool IssAtask(
+    string failPavad,
+    string kat[],
+    string pavad[],
+    double kain[],
+    int kiek[],
+    int PrekKiek
+) {
+    ofstream failas(failPavad);
+
+    if (!failas.is_open()) {
+        cout << "Klaida! Nepavyko sukurti ataskaitos failo.\n";
+        return false;
+    }
+
+    RodAtask(
+        fail,
+        kat,
+        pavad,
+        kain,
+        PrekKiek,
+    );
+
+    if (!failas) {
+        cout << "Klaida! Nepavyko irasyti ataskaitos.\n";
+        return false;
+    }
+
+    failas.close();
+
+    if (!failas) {
+        cout << "Klaida uzdarant ataskaitos faila.\n";
+        return false;
+    }
+
+    return true;
+}
+
+int main() {
+    string kat[MaxPrek];
+    string pavad[MaxPrek];
+    double kain[MaxPrek];
+    int kiek[MaxPrek];
+
+    int PrekKiek = 0;
+
+    if (!nuskaitytiDuomenis(
+        "uzsakymas.txt",
+        kat,
+        pavad,
+        kain,
+        kiek,
+        PrekKiek
+    )) {
+        return 1;
+    }
+
+    cout << "Duomenys sekmingai nuskaityti.\n";
+}
+
