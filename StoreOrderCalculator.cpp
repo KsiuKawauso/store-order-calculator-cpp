@@ -102,8 +102,8 @@ double skaicNuol(double sum, int kiek) {
     return 0;
 }
 
-double skaicMokSum(double sum, double nuol) {
-    return sum - nuol;
+double skaicMokSum(double suma, double nuol) {
+    return suma - nuol;
 }
 
 double skaicKatSum(
