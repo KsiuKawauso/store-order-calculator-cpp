@@ -111,7 +111,7 @@ double skaicKatSum(
     string kat[],
     double kain[],
     int kiek[],
-    int prekKiek
+    int PrekKiek
 ) {
     double KatSum = 0;
 
