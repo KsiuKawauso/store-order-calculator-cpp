@@ -385,9 +385,8 @@ int main() {
             cout << "2. Dalys\n";
             cout << "3. Aksesuarai\n";
             cout << "Jusu pasirinkimas: ";
-            cin >> KatPas;
-
-            string kat;
+            
+            string pasirinktaKat;
 
             switch (KatPas) {
                 case 1:
