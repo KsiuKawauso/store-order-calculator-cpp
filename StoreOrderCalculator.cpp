@@ -113,7 +113,7 @@ double skaicKatSum(
     int kiek[],
     int prekKiek
 ) {
-    double suma = 0;
+    double KatSum = 0;
 
     for (int i = 0; i < prekKiek; i++) {
         if (kat[i] == kat) {
