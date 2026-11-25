@@ -154,9 +154,7 @@ void RodPrek(
     cout << string(99, '-') << endl;
 
     for (int i = 0; i < PrekKiek; i++) {
-        if (PasKat == "" ||
-            kat[i] == PasKat) {
-
+        if (PasKat == "" || kat[i] == PasKat) {
             rasta = true;
 
             double suma = skaicEilSum(kain[i], kiek[i]);
