@@ -94,7 +94,7 @@ double skaicEilSum(double kain, int kiek) {
     return kain * kiek;
 }
 
-double skaicNuol(double sum, int kiek) {
+double skaicNuol(double suma, int kiek) {
     if (kiek >= 10) {
         return suma * 0.10;
     }
