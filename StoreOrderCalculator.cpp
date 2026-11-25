@@ -115,10 +115,10 @@ double skaicKatSum(
 ) {
     double KatSum = 0;
 
-    for (int i = 0; i < prekKiek; i++) {
-        if (kat[i] == kat) {
-            double eilSuma =
-                skaicEilSum(kainos[i], kiek[i]);
+    for (int i = 0; i < PrekKiek; i++) {
+        if (kat[i] == pasirinktaKat) {
+            double eilSuma = skaicEilSum(kain[i], kiek[i]);
+            double nuol = skaicNuol(eilSuma, kiek[i]);
 
             KatSum += skaicMokSum(eilSuma, nuol);
         }
