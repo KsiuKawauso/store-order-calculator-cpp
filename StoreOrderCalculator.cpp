@@ -226,7 +226,7 @@ void RodAtask(
 
     isvedimas << fixed << setprecision(2);
 
-    isvedimas << "\n=*=*=*=*=*= UZSAKYMO ATASKAITA =*=*=*=*=*=\n";
+    isvedimas << "\n***** UZSAKYMO ATASKAITA *****\n";
 
     isvedimas << left << setw(15) << "Kategorija"
               << setw(30) << "Preke"
