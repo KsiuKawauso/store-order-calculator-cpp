@@ -239,11 +239,9 @@ void RodAtask(
     isvedimas << string(99, '-') << endl;
 
     for (int i = 0; i < PrekKiek; i++) {
-        double suma =
-            skaicEilSum(kain[i], kiek[i]);
-
-        double nuol =
-            skaicNuol(sum, kiek[i]);
+        double suma = skaicEilSum(kain[i], kiek[i]);
+        double nuol = skaicNuol(suma, kiek[i]);
+        double mok = skaicMokSum(suma, nuol);
 
         double mok =
             skaicMokSum(sum, nuol);
